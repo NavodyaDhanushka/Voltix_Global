@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Button } from '../components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { Label } from '../components/ui/label';
-import { Check, Globe, Zap, Monitor, Smartphone, ShoppingCart, Mail, Phone, MessageCircle, Facebook, Linkedin, Instagram, ArrowRight, Star, Users, TrendingUp, Code } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
+import { Input } from './components/ui/input';
+import { Textarea } from './components/ui/textarea';
+import { Label } from './components/ui/label';
+import { Zap, Monitor, ShoppingCart, Phone, MessageCircle, Facebook, Linkedin, Instagram, ArrowRight, TrendingUp, Code } from 'lucide-react';
+import {Button} from "./components/ui/button.tsx";
 
 export default function App() {
   const [formData, setFormData] = useState({
