@@ -87,7 +87,7 @@ export default function App() {
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-500 rounded-full"></div>
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-blue-900">VOLTX</h1>
+              <h1 className="text-3xl font-bold text-blue-900">VOLTIX</h1>
               <h2 className="text-2xl font-bold text-blue-900">GLOBAL</h2>
             </div>
           </div>
