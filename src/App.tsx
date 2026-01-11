@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './com
 import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
 import { Label } from './components/ui/label';
-import { Zap, Monitor, ShoppingCart, Phone, MessageCircle, Facebook, Linkedin, Instagram, ArrowRight, TrendingUp, Code } from 'lucide-react';
+import { Zap, ShoppingCart, Phone, MessageCircle, Facebook, Linkedin, Instagram, ArrowRight, TrendingUp, Code } from 'lucide-react';
 import {Button} from "./components/ui/button.tsx";
 
 export default function App() {
@@ -45,25 +45,26 @@ export default function App() {
       title: "E-Commerce Platform",
       category: "Web Development",
       description: "Full-stack e-commerce solution with payment integration",
-      image: "bg-gradient-to-br from-blue-400 to-blue-600"
+      image: "images/Ecom.jpg"
     },
     {
       title: "Social Media Campaign",
       category: "Digital Marketing",
       description: "Successful brand awareness campaign reaching 100K+ users",
-      image: "bg-gradient-to-br from-orange-400 to-orange-600"
+      image: "images/Dgm.png"
     },
     {
       title: "Restaurant POS System",
       category: "POS Solutions",
       description: "Custom POS system for multi-location restaurant chain",
-      image: "bg-gradient-to-br from-purple-400 to-purple-600"
+      image: "images/pos.jpg"
     },
     {
       title: "Corporate Website",
       category: "Web Development",
       description: "Modern responsive website for tech startup",
-      image: "bg-gradient-to-br from-green-400 to-green-600"
+      image: "/images/Gemini_Generated_Image_66cax266cax266ca.png"
+
     }
   ];
 
@@ -145,20 +146,30 @@ export default function App() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Sample Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className={`h-40 ${project.image} relative`}>
-                  <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                    <Monitor className="w-12 h-12 text-white opacity-80" />
+                <Card
+                    key={index}
+                    className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="h-40 overflow-hidden">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                    />
                   </div>
-                </div>
-                <CardHeader>
-                  <div className="text-sm text-blue-600 font-semibold mb-1">{project.category}</div>
-                  <CardTitle className="text-lg">{project.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm">{project.description}</p>
-                </CardContent>
-              </Card>
+
+                  <CardHeader>
+                    <div className="text-sm text-blue-600 font-semibold mb-1">
+                      {project.category}
+                    </div>
+                    <CardTitle className="text-lg">{project.title}</CardTitle>
+                  </CardHeader>
+
+                  <CardContent>
+                    <p className="text-gray-600 text-sm">{project.description}</p>
+                  </CardContent>
+                </Card>
+
             ))}
           </div>
         </div>
@@ -223,12 +234,49 @@ export default function App() {
                     WhatsApp
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-lg font-semibold text-gray-900">+94 77 580 8220</p>
-                  <Button variant="outline" className="mt-2 w-full">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Chat on WhatsApp
-                  </Button>
+
+                <CardContent className="space-y-4">
+                  {/* First Number */}
+                  <div>
+                    <p className="text-lg font-semibold text-gray-900">
+                      +94 77 580 8220
+                    </p>
+                    <Button
+                        variant="outline"
+                        className="mt-2 w-full justify-center gap-2 hover:bg-green-50 hover:border-green-400 transition"
+                        asChild
+                    >
+                      <a
+                          href="https://wa.me/94775808220"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                      >
+                        <MessageCircle className="w-4 h-4 text-green-600" />
+                        Chat on WhatsApp
+                      </a>
+                    </Button>
+                  </div>
+
+                  {/* Second Number */}
+                  <div>
+                    <p className="text-lg font-semibold text-gray-900">
+                      +94 71 924 4680
+                    </p>
+                    <Button
+                        variant="outline"
+                        className="mt-2 w-full justify-center gap-2 hover:bg-green-50 hover:border-green-400 transition"
+                        asChild
+                    >
+                      <a
+                          href="https://wa.me/94719244680"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                      >
+                        <MessageCircle className="w-4 h-4 text-green-600" />
+                        Chat on WhatsApp
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -236,21 +284,55 @@ export default function App() {
                 <CardHeader>
                   <CardTitle className="text-xl">Follow Us</CardTitle>
                 </CardHeader>
+
                 <CardContent className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Facebook className="w-4 h-4 mr-2 text-blue-600" />
-                    Facebook
+                  <Button
+                      variant="outline"
+                      className="w-full justify-start gap-3 hover:bg-blue-50 hover:border-blue-300 transition"
+                      asChild
+                  >
+                    <a
+                        href="https://www.facebook.com/share/1H5EE97Ubw/?mibextid=wwXIfr "
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                      <Facebook className="w-5 h-5 text-blue-600" />
+                      Facebook
+                    </a>
                   </Button>
-                  <Button variant="outline" className="w-full justify-start">
-                    <Linkedin className="w-4 h-4 mr-2 text-blue-700" />
-                    LinkedIn
+
+                  <Button
+                      variant="outline"
+                      className="w-full justify-start gap-3 hover:bg-blue-50 hover:border-blue-300 transition"
+                      asChild
+                  >
+                    <a
+                        href="https://www.linkedin.com/company/voltix-global/ "
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                      <Linkedin className="w-5 h-5 text-blue-700" />
+                      LinkedIn
+                    </a>
                   </Button>
-                  <Button variant="outline" className="w-full justify-start">
-                    <Instagram className="w-4 h-4 mr-2 text-pink-600" />
-                    Instagram
+
+                  <Button
+                      variant="outline"
+                      className="w-full justify-start gap-3 hover:bg-pink-50 hover:border-pink-300 transition"
+                      asChild
+                  >
+                    <a
+                        href="https://www.instagram.com/voltix_global?igsh=bTU0bTMzd2ZjZDQ3&utm_source=qr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                      <Instagram className="w-5 h-5 text-pink-600" />
+                      Instagram
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
+
             </div>
           </div>
         </div>
@@ -265,12 +347,12 @@ export default function App() {
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">VOLTX GLOBAL</h3>
+                <h3 className="text-xl font-bold">VOLTIX GLOBAL</h3>
                 <p className="text-purple-200 text-sm">Digital Solutions Partner</p>
               </div>
             </div>
           </div>
-          <p className="text-purple-200">© 2024 Voltix Global. All rights reserved.</p>
+          <p className="text-purple-200">© 2025 Voltix Global. All rights reserved.</p>
           <p className="text-purple-300 text-sm mt-2">Let's connect and power your business growth! ⚡</p>
         </div>
       </footer>
