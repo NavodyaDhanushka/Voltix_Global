@@ -45,13 +45,13 @@ export default function App() {
       title: "E-Commerce Platform",
       category: "Web Development",
       description: "Full-stack e-commerce solution with payment integration",
-      image: "images/Ecom.jpg"
+      image: "images/ecom.jpg"
     },
     {
       title: "Social Media Campaign",
       category: "Digital Marketing",
       description: "Successful brand awareness campaign reaching 100K+ users",
-      image: "images/Dgm.png"
+      image: "images/digmrkt.png"
     },
     {
       title: "Restaurant POS System",
@@ -63,7 +63,7 @@ export default function App() {
       title: "Corporate Website",
       category: "Web Development",
       description: "Modern responsive website for tech startup",
-      image: "/images/Gemini_Generated_Image_66cax266cax266ca.png"
+      image: "/images/web.png"
 
     }
   ];
