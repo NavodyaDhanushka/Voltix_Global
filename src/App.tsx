@@ -5,6 +5,13 @@ import { Textarea } from './components/ui/textarea';
 import { Label } from './components/ui/label';
 import { Zap, ShoppingCart, Phone, MessageCircle, Facebook, Linkedin, Instagram, ArrowRight, TrendingUp, Code } from 'lucide-react';
 import {Button} from "./components/ui/button.tsx";
+import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
+
+
+const SERVICE_ID = 'service_o7w2mlk';
+const TEMPLATE_ID = 'template_tkcmoax';
+const PUBLIC_KEY = '6VnaLNa2Squ7D39Hl';
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -15,8 +22,38 @@ export default function App() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission
+
+    emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          reply_to: formData.email,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+    )
+        .then(() => {
+          Swal.fire({
+            icon: "success",
+            title: "Message Sent!",
+            text: "We’ll get back to you within 24 hours.",
+            confirmButtonColor: "#2563eb", // Tailwind blue-600
+          });
+
+          setFormData({ name: "", email: "", message: "" });
+        })
+        .catch((error) => {
+          console.error("EmailJS Error:", error);
+
+          Swal.fire({
+            icon: "error",
+            title: "Oops!",
+            text: "Failed to send message. Please try again.",
+            confirmButtonColor: "#dc2626", // red-600
+          });
+        });
   };
 
   const services = [
